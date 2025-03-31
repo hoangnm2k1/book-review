@@ -12,4 +12,8 @@ class Book extends Model
     public function reviews() {
         return $this->hasMany(Review::class);
     }
+
+    // public function scopeMinReviews(Builder $query, int $minReviews): Builder|QueryBuilder {
+    //     return $query->where('reviews_count', '>=', $minReviews);
+    // }
 }
