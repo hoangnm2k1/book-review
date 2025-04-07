@@ -14,9 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        RateLimiter::for ('reviews', function (Request $request) {
-            return Limit::perHour(3)->by($request->user()?->id ?: $request->ip());
-        });
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
