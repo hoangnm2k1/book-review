@@ -31,7 +31,7 @@ class Book extends Model
 
     public function scopeWithAvgRating(Builder $query): Builder
     {
-        return $query->withAvg('reviews', 'rating')->orderBy('reviews_avg_ratings', 'desc');
+        return $query->withAvg('reviews', 'rating')->orderBy('reviews_avg_rating', 'desc');
     }
 
     public function scopePopular(Builder $query, $from = null, $to = null): Builder|QueryBuilder
